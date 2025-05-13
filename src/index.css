@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+}
+
+.app {
+    width: 100%;
+    margin: 0 auto;
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width: 768px) {
+    header {
+    height: 8vh;
+    width: 100vw;
+    background-color: #9C866B;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    }
+
+    h1 {
+        color: #FFFFFF;
+        font-family: 'Itim', 'Comic Sans MS', 'Segoe Print', cursive;
+        font-size: 3rem;
+        width: 90%;
+        margin-left: 15px;
+        text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.6);
+    }
+
+    .navBtn {
+        width: 10%;
+        background-color: #9C866B;
+        height: 40%;
+        border: 1px solid transparent;
+        border-radius: 3px;
+        transition: border .3s ease-in-out;
+        margin-right: 15px;
+        margin-left: 15px;
+        margin-top: 10px;
+        scale: 1.5;
+    }
+
+    .navBtn:active {
+        cursor: default;
+        border: 1px solid aliceblue;
+    }
+
+    .searchDiv {
+        width: 100%;
+        height: 8vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(to bottom, #9C866B 30%, #D1BB9E 100%);
+    }
+
+    .searchBar {
+        width: 80%;
+        height: 70%;
+        background-color: #B79C7A;
+        border-radius: 50px;
+        border: 2px solid #5E503F;
+        transition: border .3s ease-in-out;
+        align-items: center;
+        display: flex;
+    }
+
+    .searchBar:active {
+        cursor: default;
+        border: 2px solid aliceblue;
+    }
+
+    .searchIcon {
+        width: 30px;
+        height: 30px;
+        margin-left: 10px;
+    }
+
+    .searchInput {
+        height: 80%;
+        width: 80%;
+        background-color: transparent;
+        font-size: 1.5rem;
+        border: none;
+        color: #5E503F;
+        outline: none;
+        font-family: 'Itim', 'Comic Sans MS', 'Segoe Print', cursive;
+    }
+
+    .searchInput::placeholder {
+        color: #FFFFFF;
+        opacity: 0.8;
+        font-family: 'Itim', 'Comic Sans MS', 'Segoe Print', cursive;
+    }
+
+    .content {
+        width: 100%;
+        height: 84vh;
+        background-color: #D1BB9E;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        justify-content: flex-start;
+    }
+
+    .imageCard {
+        width: 90%;
+        border: 1.5px solid transparent;
+        border-radius: 10px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        background-color: #B79C7A;
+        font-family: 'Itim', 'Comic Sans MS', 'Segoe Print', cursive;
+        color: rgb(240, 240, 255, 0.8);
+
+        max-width: 400px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-height: calc(100vw*0.9 + 30px);
+    }
+
+    .imageCard img {
+        width: 100%;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+    }
+
+    .imageCardHeader {
+        width: 100%;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .imageCardHeader p {
+        width: 90%;
+        margin-left: 10px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    .detailsBtn,
+    .shareBtn {
+        width: 30px;
+        height: 30px;
+        background-color: transparent;
+        border: 1.5px solid transparent;
+        cursor: default;
+        padding: 0;
+        transition: border .3s ease-in-out;
+        border-radius: 50%;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    .detailsBtn:active,
+    .shareBtn:active {
+        cursor: default;
+        border: 1px solid aliceblue;
+    }
+
+    .detailsBtn img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .sideBar {
+        position: fixed;
+        top: 0;
+        left: -250px;
+        width: 250px;
+        height: 100vh;
+        background-color: #B79C7A;
+        transition: left 0.3s ease-in-out;
+        z-index: 9999;
+        padding-top: 20px;
+        font-family: 'Itim', 'Comic Sans MS', 'Segoe Print', cursive;
+        color: rgb(240, 240, 255);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .sideBar.open {
+        left: 0;
+    }
+
+    .blurOverlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100dvh;
+        background-color: rgba(0, 0, 0, 0.4);
+        z-index: 9998;
+        backdrop-filter: blur(5px);
+    }
+
+    .navOption {
+        width: 100%;
+        height: 3rem;
+        border: 1px solid transparent;
+        cursor: default;
+        transition: border .3s ease-in-out;
+        display: flex;
+        align-items: center;
+    }
+
+    .navOption a {
+        color: #5E503F;
+        text-decoration: none;
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: bold;
+        margin-left: 20px;
+        font-size: 1.5rem;
+    }
+
+    .navOption:active {
+        cursor: default;
+        border: 1px solid aliceblue;
+    }
+}
+

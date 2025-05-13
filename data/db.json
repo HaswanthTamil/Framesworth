@@ -1,0 +1,10 @@
+{
+    "posts": [
+        {
+            "id": 1,
+            "title": "json-server",
+            "post": "typicode",
+            "timestamp": "2023-01-01"
+        }
+    ]
+}
